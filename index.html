@@ -6,6 +6,31 @@
     <title></title>
 </head>
 <body>
-    <b>Hello World</b>
+    <center>
+        <form id="form">
+            <label for="num1">Enter the first number: </label>
+            <input type="number" id="num1" name="num1"><br>
+            <label for="num2">Enter the second number: </label>
+            <input type="number" id="num2" name="num2"><br>
+            <label for="option">Enter 1 - Add, 2 - Subtract, 3 - Multiply, 4 - Divide</label>
+            <input type="number" id="option" name="option"><br>
+            <button type="submit">Find the value</button>
+        </form>
+        <div id="result"></div>
+    </center>
+    <script>
+        
+        document.getElementById('form').addEventListener('submit', function(event) { 
+            event.preventDefault();
+            const num1 = parseInt(document.getElementById('num1').nodeValue);
+            console.log(num1);
+            const num2 = parseInt(document.getElementById('num2').nodeValue);
+            const option = parseInt(document.getElementById('option').nodeValue);
+            var result = 0;
+            result = num1 + num2;
+            document.getElementById('result').innerHTML = `<p style="color: red;">${result}</p>`;
+        });
+        
+    </script>
 </body>
 </html>
